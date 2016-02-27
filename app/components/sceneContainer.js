@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import THREE from 'three';
 import ReactTHREE from 'react-three';
 import { Renderer, Scene, Mesh, PerspectiveCamera } from 'react-three';
+import Cupcake from './cupcake.js';
 
 class SceneContainer extends React.Component{
   constructor(props){
@@ -23,7 +24,7 @@ class SceneContainer extends React.Component{
     return (<span><Renderer width={this.props.width} height={this.props.height}>
       <Scene width={this.props.width} height={this.props.height} camera="maincamera">
           <PerspectiveCamera name="maincamera" {...cameraprops} />
-          { /** <Cupcake {...this.props.cupcakedata} /> **/ }
+          { <Cupcake {...this.props.cupcakedata} /> }
       </Scene>
     </Renderer></span>);
   }

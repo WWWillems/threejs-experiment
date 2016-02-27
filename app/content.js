@@ -38,7 +38,7 @@ class App extends React.Component{
   };
 
    return (<div>
-            <h1 style={textStyle}>Three.js Experiment</h1>
+            <h1 style={textStyle}>React+ Three.js Experiment</h1>
             <SceneContainer {...sceneprops}/>
           </div>);
   }
