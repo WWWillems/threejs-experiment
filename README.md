@@ -1,2 +1,22 @@
 # threejs-experiment
-Some Three.js foolery
+Some Three.js foolery.
+
+#### Description
+This repository is a personal experimental project using Three.js, webpack and ES6.
+
+#### How to run?
+1. Install all dependencies using npm
+> npm install
+2. Run the application
+> npm start
+3. Open your browser of choice and surf to
+> http://localhost:8080
+
+#### Did you know?
+##### Logging
+Chrome debug console:  
+Messages prefixed with [HMR] originate from the webpack/hot/dev-server module.  
+Messages prefixed with [WDS] originate from the webpack-dev-server client.
+
+#### Issues?
+Feel free to contact me if you encounter any problems or see something incorrect. I'm always looking to learn.

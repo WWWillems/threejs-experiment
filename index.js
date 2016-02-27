@@ -1,1 +1,3 @@
-document.write(require('./content.js'));
+require('./content.js');
+
+console.log("> Ja hallo moat");

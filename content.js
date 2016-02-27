@@ -1,1 +1,1 @@
-module.exports = 'It Works from content.js! Hoera!!!! Nope';
+document.write("> This is being included by a require statement.");
