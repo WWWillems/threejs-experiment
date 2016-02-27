@@ -1,5 +1,6 @@
 # threejs-experiment
-Some Three.js foolery.
+#### Introduction
+I couldn't stand the urge to try & combine React and Three.js. That thought was the initial inspiration for this experimental project. Feel free to contribute or contact me! Have fun!
 
 #### Description
 This repository is a personal experimental project using Three.js, webpack and ES6.

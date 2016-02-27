@@ -1,7 +1,7 @@
 {
   "name": "test-threejs",
   "version": "1.0.0",
-  "description": "Some Three.js foolery",
+  "description": "Some React & Three.js foolery using react-three npm packages.",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.js --hot --inline --progress --colors",
