@@ -30,5 +30,9 @@
     "react-dom": "0.14.7",
     "webpack": "1.12.14",
     "webpack-dev-server": "1.14.1"
+  },
+  "dependencies": {
+    "react-three": "0.8.0",
+    "three": "0.74.0"
   }
 }

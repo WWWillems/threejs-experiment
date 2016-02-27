@@ -1,4 +1,4 @@
-var Webpack = require('webpack');
+var webpack = require('webpack');
 var path = require('path');
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
 var buildPath = path.resolve(__dirname, 'public', 'build');
@@ -9,7 +9,7 @@ var config = {
   entry: [
       'webpack-dev-server/client?http://localhost:8080',
       'webpack/hot/only-dev-server',
-      path.resolve(__dirname, './index.js'),
+      path.resolve(__dirname, './app/index.js'),
   ],
   output: {
     path: buildPath,
@@ -18,7 +18,7 @@ var config = {
   },
   module: {
     loaders: [{
-      test: /\.js?$/,
+      test: /\.jsx?$/,
       exclude: [nodeModulesPath],
       loader: 'babel',
       query: {
@@ -27,7 +27,9 @@ var config = {
     }]
   },
 
-  plugins: [new Webpack.HotModuleReplacementPlugin()]
+  plugins: [
+   new webpack.HotModuleReplacementPlugin(),
+   new webpack.NoErrorsPlugin()]
 };
 
 module.exports = config;

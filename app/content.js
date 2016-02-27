@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Renderer from './components/renderer';
 
 class App extends React.Component{
   constructor(props){
@@ -11,7 +12,10 @@ class App extends React.Component{
   }
 
   render(){
-    return (<h3>This is the top React Application!</h3>);
+    return (<div>
+              <h3>This is the top React Application!</h3>
+              <Renderer />
+            </div>);
   }
 }
 
