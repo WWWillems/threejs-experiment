@@ -1,0 +1,26 @@
+{
+  "name": "test-threejs",
+  "version": "1.0.0",
+  "description": "Some Three.js foolery",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WWWillems/threejs-experiment.git"
+  },
+  "keywords": [
+    "threejs"
+  ],
+  "author": "WWWillems",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WWWillems/threejs-experiment/issues"
+  },
+  "homepage": "https://github.com/WWWillems/threejs-experiment#readme",
+  "devDependencies": {
+    "webpack": "1.12.14",
+    "webpack-dev-server": "1.14.1"
+  }
+}
