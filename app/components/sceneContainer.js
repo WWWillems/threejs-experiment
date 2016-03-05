@@ -10,7 +10,7 @@ class SceneContainer extends React.Component{
     super(props);
   }
 
-  render () {
+  render() {
     var aspectratio = this.props.width / this.props.height;
     var cameraprops = {
       fov:75,
@@ -21,18 +21,20 @@ class SceneContainer extends React.Component{
       lookat:new THREE.Vector3(0,0,0)
     };
 
-    return (<span><Renderer width={this.props.width} height={this.props.height}>
-      <Scene width={this.props.width} height={this.props.height} camera="maincamera">
-          <PerspectiveCamera name="maincamera" {...cameraprops} />
-          { <Cupcake {...this.props.cupcakedata} /> }
-      </Scene>
-    </Renderer></span>);
-  }
+    return (<Renderer width={this.props.width} height={this.props.height}>
+              <Scene width={this.props.width} height={this.props.height} camera="maincamera">
+                  <PerspectiveCamera name="maincamera" {...cameraprops} />
+                  { <Cupcake {...this.props.cupcakedata} /> }
+              </Scene>
+           </Renderer>);
+    }
 };
 
 SceneContainer.propTypes = {
   width: React.PropTypes.number.isRequired,
   height: React.PropTypes.number.isRequired,
 };
+
+SceneContainer.displayName = 'SceneContainer';
 
 export default SceneContainer;

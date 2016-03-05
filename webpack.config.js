@@ -22,7 +22,7 @@ var config = {
       exclude: [nodeModulesPath],
       loader: 'babel',
       query: {
-        presets: ['react', 'es2015']
+        presets: ['react', 'es2015', 'stage-0']
       }
     }]
   },
