@@ -34,6 +34,7 @@
     "webpack-dev-server": "1.14.1"
   },
   "dependencies": {
+    "react-radio-group": "2.2.0",
     "react-three": "0.8.0",
     "three": "0.74.0"
   }

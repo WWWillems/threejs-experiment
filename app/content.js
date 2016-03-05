@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SceneContainer from './components/sceneContainer.js';
+import ControlsComponent from './components/controls';
+import SceneComponent from './components/sceneContainer';
 import THREE from 'three';
+import Constants from './constants'
 
 class App extends React.Component{
   constructor(props){
@@ -11,64 +13,42 @@ class App extends React.Component{
     let h = window.innerHeight;
 
     this.state = {
-      rotationAngle: 0,
-      sceneprops: {
-        width:w,
-        height:h,
-        cupcakedata:{
-          position:new THREE.Vector3(0,0,0),
-          quaternion:new THREE.Quaternion()
-        },
-      }
-    };
+           robot: Constants.ROBOT.MECH,
+           spinDirection: Constants.SPIN.LEFT,
+           spinSpeed: Constants.SPIN_SPEED_DEFAULT
+       };
 
-    this.spincupcake = this.spincupcake.bind(this);
+    this._onChangeRobot = this._onChangeRobot.bind(this);
+    this._onChangeSpinDirection = this._onChangeSpinDirection.bind(this);
+    this._onChangeSpinSpeed = this._onChangeSpinSpeed.bind(this);
   }
 
-  componentDidMount(){
-    this.spincupcake();
-  }
+  render() {
+       return (
+           <div>
+               <ControlsComponent robot={this.state.robot} spinDirection={this.state.spinDirection} spinSpeed={this.state.spinSpeed} onChangeRobot={this._onChangeRobot} onChangeSpinDirection={this._onChangeSpinDirection} onChangeSpinSpeed={this._onChangeSpinSpeed}/>
+               <SceneComponent robot={this.state.robot} spinDirection={this.state.spinDirection} spinSpeed={this.state.spinSpeed}/>
+           </div>
+       );
 
-  spincupcake(t) {
-      console.log("T is = " , t);
+   }
 
-      let rotation = t * 0.001;
-      let euler = this.state.sceneprops.cupcakedata.quaternion.setFromEuler(new THREE.Euler(rotation, rotation * 3,0));
-      let xPos = 300  * Math.sin(this.state.rotationAngle);
+   _onChangeRobot(robotName) {
+       this.setState({robot: robotName});
+   }
 
-      this.setState ({
-        ...this.state,
-        rotationAngle: rotation,
-        sceneProps: {
-          cupcakedata: {
-            quaternion:euler,
-            position:{
-              x: xPos
-            }
-          }
-        }
-      });
+   _onChangeSpinDirection(spinDirection) {
+       this.setState({spinDirection: spinDirection});
+   }
 
-      //console.log("SPIN!!");
-      //requestAnimationFrame(this.spincupcake, t);
-  }
-
-  render(){
-   console.log("> Rendering at " , this.state.sceneprops.width , " x " , this.state.sceneprops.height);
-
-   var textStyle = {
-    color: 'black',
-    WebkitTransition: 'all', // note the capital 'W' here
-    msTransition: 'all' // 'ms' is the only lowercase vendor prefix
-  };
-
-   return (<div>
-            <h1 style={textStyle}>React+ Three.js Experiment</h1>
-            <SceneContainer {...this.state.sceneprops}/>
-          </div>);
-  }
+   _onChangeSpinSpeed(spinSpeed) {
+       this.setState({spinSpeed: spinSpeed});
+   }
 }
 
 App.displayName = "App";
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(
+  React.createElement(App),
+  document.getElementById('app')
+);
