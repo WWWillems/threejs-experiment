@@ -13,7 +13,7 @@ class App extends React.Component{
     let h = window.innerHeight;
 
     this.state = {
-           robot: Constants.ROBOT.MECH,
+           robot: Constants.ROBOT.ROBBY,
            spinDirection: Constants.SPIN.LEFT,
            spinSpeed: Constants.SPIN_SPEED_DEFAULT
        };
@@ -26,11 +26,10 @@ class App extends React.Component{
   render() {
        return (
            <div>
-               <ControlsComponent robot={this.state.robot} spinDirection={this.state.spinDirection} spinSpeed={this.state.spinSpeed} onChangeRobot={this._onChangeRobot} onChangeSpinDirection={this._onChangeSpinDirection} onChangeSpinSpeed={this._onChangeSpinSpeed}/>
-               <SceneComponent robot={this.state.robot} spinDirection={this.state.spinDirection} spinSpeed={this.state.spinSpeed}/>
+              <ControlsComponent robot={this.state.robot} spinDirection={this.state.spinDirection} spinSpeed={this.state.spinSpeed} onChangeRobot={this._onChangeRobot} onChangeSpinDirection={this._onChangeSpinDirection} onChangeSpinSpeed={this._onChangeSpinSpeed}/>
+              <SceneComponent robot={this.state.robot} spinDirection={this.state.spinDirection} spinSpeed={this.state.spinSpeed}/>
            </div>
        );
-
    }
 
    _onChangeRobot(robotName) {

@@ -90,21 +90,26 @@ class SceneComponent extends React.Component{
               }
           );
 
+          console.log("Rendering scene @ " , window.innerWidth , " x " , window.innerHeight);
+
           return React.createElement(
-              ReactTHREE.Scene,
-              {
-                  width: window.innerWidth,
-                  height: window.innerHeight,
-                  camera: 'camera',
-                  antialias: true,
-                  background: 0xEEEEEE
-              },
-              CameraElement,
-              RobotRobbyElement,
-              RobotMechElement,
-              AmbientLight,
-              DirectionalLight
-          )
+            ReactTHREE.Renderer,
+            {width: window.innerWidth, height: window.innerHeight},
+            React.createElement(
+                ReactTHREE.Scene,
+                {
+                    width: window.innerWidth,
+                    height: window.innerHeight,
+                    camera: 'camera',
+                    antialias: true,
+                    background: 0xFF0000
+                },
+                CameraElement,
+                RobotRobbyElement,
+                RobotMechElement,
+                AmbientLight,
+                DirectionalLight
+          ));
       }
 
       _animate() {

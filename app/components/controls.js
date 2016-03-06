@@ -44,6 +44,7 @@ class ControlsComponent extends React.Component {
     }
 
     _onChangeRobot(value) {
+        console.log("> Change robot");
         this.props.onChangeRobot(value);
     }
 
